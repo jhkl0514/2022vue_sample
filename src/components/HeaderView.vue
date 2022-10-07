@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1><a href="#">compay</a></h1>
+    <h1><a href="#">company</a></h1>
     <div class="nav">
         <ul>
             <!-- <li>{{menu}}</li> for문 돌려서 쓰자-->
