@@ -1,19 +1,28 @@
 <template>
   <HeaderView></HeaderView>
   <main-visual></main-visual>
-  <DirectBanner></DirectBanner>
+  <DirectBanner v-bind:data = "directData"></DirectBanner>
 </template>
 
 <script>
  import HeaderView from "./components/HeaderView.vue"
  import MainVisual from "./components/MainVisual.vue";
- import DirectBanner from "./components/DirecBanner.vue"
+ import DirectBanner from "./components/DirecBanner.vue";
+
+ import directs from "./data/directs.js"
+
+
 export default {
   components: {
     HeaderView,
     MainVisual,
     DirectBanner,
-}
+  },
+  data(){
+    return{
+      directData:directs
+    }
+  }
 }
 </script>
 

@@ -24,6 +24,7 @@ export default {
 <style lang="scss">
     .visual{
         background: pink;
+        margin-bottom: 20px;
         .item{
           height: 300px;
           display: flex;justify-content: center;align-items: center;
