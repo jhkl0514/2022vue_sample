@@ -1,52 +1,41 @@
 <template>
   <div class="container">
-    <!-- {{directs[0].name}} -->
-    <ul class="d_icon">
-        <li v-for="item in data" :key="item">
-            <a :href="item.href">
-                <img v-bind:src="`./images/directs/${item.src}`" alt="">
+    <!-- {{data}} -->
+    <ul class="dBanner">
+        <li v-for="(item,i) in data" v-bind:key="i">
+            <!-- {{item.src}} -->
+            <a v-bind:href="data[i].href">
+                <img :src="`images/directs/${item.src}`" src="" alt="">
                 <div class="txt">
-                    {{item.name}}
-                </div>         
-            </a>
-        </li>        
-        <!-- <li v-for="item in directs" v-bind:key="item"> 
-            <a :href="item.href">
-                <img v-bind:src="`./images/directs/${item.src}`" alt="">
-                <div class="txt">
-                    {{item.name}}
-                </div>         
-            </a>
-        </li> -->
+                    {{data[i].name}}
+                </div>
+            </a>            
+        </li>
     </ul>
   </div>
 </template>
 
 <script>
-    // import directs from "../data/directs.js"(App.vue)
 export default {
-    props:["data"], //data를 받아준다.
-    data(){
-        return {
-            // directs:directs(App.vue)
-        }
-    }
+    props:["data"]
 }
 </script>
 
+
 <style lang="scss">
-    .d_icon{
+    .dBanner{
         display: flex;
+        flex-wrap: wrap;
         gap:20px;
         li{
-            _width: 10%;
+            width: calc((100% - 20px * 9) /10);
         }
         img{
+            display: block;
             width: 100%;
         }
         .txt{
             text-align: center;
         }
     }
-
 </style>
